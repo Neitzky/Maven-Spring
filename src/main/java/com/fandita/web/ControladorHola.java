@@ -6,6 +6,8 @@
 
 package com.fandita.web;
 
+import javafx.application.Application;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,4 +25,14 @@ public @ResponseBody String algo() {
 String facil="Mi primer servicio en java con REST y spring";
 return facil;
 }
+
+
+@RequestMapping(value="/mensaje", method=RequestMethod.GET,
+                headers={"Accept=Application/json"})
+@ResponseBody String mijason(){
+ObjectMapper mapeadorjson= new ObjectMapper();
+return null;
+}
+
+
 }
