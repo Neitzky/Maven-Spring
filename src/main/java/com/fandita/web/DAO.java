@@ -6,6 +6,7 @@
 
 package com.fandita.web;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -37,8 +38,36 @@ public class DAO {
         return session;
         
     }
+    
+    protected void begin(){
+        getSession().beginTransaction();
+    }   
+    protected void commit(){
+            getSession().getTransaction().commit();
+        }
+    
+    protected void rollback(){
+        try{
+            
+            getSession().getTransaction().rollback();
+            getSession().close();
             
         }
+        
+        catch(HibernateException e){}
+        DAO.t1.set(null);
+        
+        }
+    
+    public static void close() {
+        
+        getSession().close();
+        
+        DAO.t1.set(null);
+    }
+    }
+            
+   
     
             
 
