@@ -6,6 +6,7 @@
 
 package com.fandita.web;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
@@ -29,9 +30,10 @@ return facil;
 
 @RequestMapping(value="/mensaje", method=RequestMethod.GET,
                 headers={"Accept=Application/json"})
-@ResponseBody String mijason(){
+@ResponseBody ArrayList<Usuario> mijason(){
+    
 ObjectMapper mapeadorjson= new ObjectMapper();
-return null;
+return DAOUsuarioImpl.obtenerUsuario();
 }
 
 

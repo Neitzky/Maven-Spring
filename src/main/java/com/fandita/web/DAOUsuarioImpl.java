@@ -17,8 +17,16 @@ public class DAOUsuarioImpl {
     
     public static ArrayList<Usuario> obtenerUsuario(){
         
-        ArrayList<Usuario
-        Usuario 1 =new Usuario("Jcampos, xxx, y");
+        ArrayList<Usuario> us=new ArrayList<Usuario>();
+        Usuario u1 =new Usuario("Jcampos, xxx, y");
+        Usuario u2 =new Usuario("Aldo, yyy, x");
+        Usuario u3 =new Usuario("Fany, zzz, z");
+        
+        us.add(u1);
+        us.add(u2);
+        us.add(u3);
+       
+        
         return null;
        
         
